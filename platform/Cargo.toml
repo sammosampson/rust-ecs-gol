@@ -1,0 +1,16 @@
+[package]
+name = "gol"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["gol-internal", "gol-slow"]
+gol-internal = []
+gol-slow = []
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["std", "winuser", "impl-default", "memoryapi", "xinput", "winerror", "libloaderapi", "dsound", "profileapi", "fileapi", "handleapi", "timeapi", "synchapi", "winbase"] }
+
+[dependencies]
+gol-engine = { path = "../engine", version = "0.1.0"}

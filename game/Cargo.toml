@@ -1,0 +1,15 @@
+[package]
+name = "gol-game"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["gol-internal", "gol-slow"]
+gol-internal = []
+gol-slow = []
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+gol-engine = { path = "../engine", version = "0.1.0"}
